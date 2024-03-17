@@ -1,0 +1,26 @@
+@AbapCatalog.sqlViewName: 'zgui_cds_ip'
+
+define view  zpratap_cds_view_input 
+        with parameter p_mtype: mtart, p_mgroup:matkl
+        as select  from mara
+
+ {
+   key Matnr,
+       mtart,
+       matkl,
+       ntgew
+ } where mtart = :p_mtype
+    and  matkl = :p_mgroup
+
+
+
+Consume CDS VIEW into SE38.
+
+ parameters p_mtype type mtart.
+
+ select * from zgui_cds_ip( p_mtype = @p_mtype, p_matkl: 'L004')
+       into table @data(it_material).
+
+
+
+
