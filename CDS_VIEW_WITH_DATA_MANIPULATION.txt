@@ -1,0 +1,25 @@
+@AbapCatalog.sqlViewName: 'zgui_cds_data_manipulation'
+
+define view  zpratap_cds_view_data_manipulation
+        as select  from ekpo
+
+ {
+   key ebeln,
+       eblep,
+       ltrim(matnr,'0') as Material Number,
+      
+      case statu
+      when 'Q' then  'Quotation Exists'
+      when 'F' then 'Main Producton Order'
+      else 'No Quotation'
+      end as RFQ_Status,
+
+     case 
+     when lgort = '0004' then 'STR1'
+     when lgort = '0005' then 'STR2'
+    end  as str_loc,
+    netpr,
+    (netpr -100) as discounted_price
+     
+    
+ } 
