@@ -1,0 +1,19 @@
+@AbapCatalog.sqlViewName: 'zgui_cds_alias_name'
+
+define view  zpratap_cds_view_alias
+        as select  from mara
+
+ {
+   key Matnr as Material Numer,
+       mtart,
+       matkl as Material Group,
+       brgew.
+ } 
+
+
+
+// Consume CDS VIEW into SE38.
+
+
+
+select * from zgui_cds_alias_name into table @data(it_material_details).
