@@ -1,0 +1,15 @@
+@AbapCatalog.sqlViewName: 'zgui_call_cdsview'
+
+define view  zpratap_call_cds_another_view 
+        as select from zpratap_cds_view_input(p_mtype:'FERT',p_mgroup:'L004')
+
+ {
+   key Matnr,
+       mtart,
+       matkl,
+       ntgew
+ } 
+
+
+
+
